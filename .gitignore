@@ -73,3 +73,5 @@ fabric.properties
 
 .sass-cache
 package-lock.json
+
+sftp.json
