@@ -1,0 +1,328 @@
+@import "node_modules/normalize.css/normalize.css";
+
+// COLORS
+$colorWhite: #fff;
+$colorSwissRed: #D52B1E;
+$colorScottishBlue: #077DC8;
+$colorCarbon: #4F4B4B;
+$colorGranite: #555555;
+$colorRock: #827C7C;
+$colorScree: #D6D6D6;
+$colorSnow: #F5F5F5;
+
+// HTML
+html {
+  color: $colorCarbon;
+  font-family: "SangBleu OG Sans Trial", serif;
+  font-size: 1em;
+  scroll-behavior: smooth;
+
+  @media all and (min-width: 1440px) {
+    font-size: 1.4em;
+  }
+}
+
+section {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: calc(100vh - 128px);
+  padding: 64px 32px;
+  position: relative;
+
+  @media all and (min-width: 1280px) {
+    padding: 64px 128px;
+  }
+}
+
+hr {
+  background: $colorWhite;
+  border: none;
+  height: 2px;
+  margin: 24px 0;
+  width: 100%;
+}
+
+// TYPOGRAPHY
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Euclid Square Trial", sans-serif;
+  color: $colorScree;
+  font-weight: 600;
+  margin: 0;
+}
+
+h1 {
+
+}
+
+h2 {
+  font-size: 3em;
+  line-height: 1em;
+  margin: 1em 0 1em;
+  position: relative;
+
+  &:before {
+    background: $colorSwissRed;
+    content: "";
+    display: block;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    bottom: -.2em;
+    width: 1em;
+  }
+}
+
+h3 {
+  color: $colorCarbon;
+}
+
+h4 {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-bottom: 1em;
+
+  & + p {
+    margin-top: -8px;
+  }
+}
+
+p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 2em;
+
+  &.gray {
+    color: $colorRock;
+  }
+}
+
+small {
+  font-family: "Euclid Square Trial", sans-serif;
+  font-weight: 600;
+  font-size: 0.625em;
+}
+
+a {
+  color: $colorScottishBlue;
+  text-decoration: none;
+
+  &.button {
+    transition: all ease-in-out .15s;
+    align-self: end;
+    background: $colorWhite;
+    border: 2px solid darken($colorSwissRed, 5%);
+    color: $colorSwissRed;
+    font-family: "Euclid Square Trial", sans-serif;
+    font-size: 1.2em;
+    font-weight: 600;
+    line-height: 2em;
+    text-decoration: none;
+    padding: .15em .5em .1em;
+    position: absolute;
+    bottom: -.7em;
+    right: 32px;
+    text-align: right;
+    z-index: 1;
+
+    &:hover {
+      border-color: $colorWhite;
+      color: darken($colorSwissRed, 5%);
+    }
+
+    &:active {
+      border: 2px solid darken($colorSwissRed, 5%);
+      background: darken($colorSwissRed, 5%);
+      color: $colorWhite;
+    }
+
+    @media all and (min-width: 1280px) {
+      right: 128px;
+    }
+  }
+}
+
+// LAYOUT
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  @media all and (min-width: 768px) {
+    display: inherit;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .content-left {
+    position: fixed;
+    width: 50%;
+  }
+
+  .content-right {
+    position: sticky;
+    left: 50%;
+    width: 50%;
+  }
+}
+
+.bg-red {
+  background: $colorSwissRed;
+
+  h2, h3, h4, p, small {
+    color: $colorWhite;
+
+    &:before {
+      background: $colorWhite;
+    }
+  }
+
+  p a {
+    color: $colorWhite;
+  }
+}
+
+.bg-gray {
+  background: $colorSnow;
+}
+
+@media all and (min-width: 1280px) {
+  .content {
+    max-width: 28em;
+    margin: auto;
+  }
+}
+
+.center {
+  align-self: center;
+  justify-content: center;
+}
+
+
+/*
+SECTIONS
+*/
+
+// BRAND
+
+.definition {
+  color: $colorRock;
+  font-size: .75em;
+  max-width: 26em;
+}
+
+// INTRO
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(100vh - 64px);
+  //padding: 32px 24px;
+}
+
+.logo {
+  align-self: start;
+}
+
+.detail-circle {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  &--flip {
+    left: 0;
+    right: auto;
+  }
+}
+
+.welcome-text {
+  align-content: center;
+  justify-content: center;
+
+  @media all and (min-width: 1024px) {
+    width: 24em;
+    height: auto;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .scroll-to {
+    display: none;
+  }
+}
+
+// MANTRA
+
+.mantra {
+  .content {
+    padding: 24px;
+  }
+}
+
+.detail-cross {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+// ARTICLES
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.article-wrapper {
+  a {
+    color: inherit;
+  }
+}
+
+.blog {
+
+  &__slider {
+    padding: 0;
+  }
+
+  &__post {
+    padding: 1.5em 0 .5em;
+
+    + .blog__post {
+      border-top: 2px solid $colorScree;
+    }
+
+    &:hover {
+      a h3 {
+        color: $colorScottishBlue;
+      }
+    }
+  }
+}
+
+
+// FOOTER
+.footer {
+  justify-content: space-between;
+
+  @media all and (min-width: 768px) {
+    justify-content: space-around;
+  }
+}
+
+footer {
+  justify-self: end;
+}
+
+.social-logos {
+  display: flex;
+  justify-content: space-between;
+
+  img {
+    height: 32px;
+    width: 32px;
+  }
+}
